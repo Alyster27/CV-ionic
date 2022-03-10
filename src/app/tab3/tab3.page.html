@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" *ngFor="let data of works" style="max-width: 1240px; margin-left: auto; margin-right: auto;">
+    <ion-card-header>
+      <img [src]="data.imgUrl" alt="" class="img-png">
+      <ion-card-title>{{ data.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>{{ data.company }}</ion-card-subtitle><br>
+      <ion-card-subtitle>{{ data.dateStart }} - {{ data.dateEnd }}</ion-card-subtitle><br>
+      <ion-card-subtitle>{{ data.description }}</ion-card-subtitle>
+      <ion-button color="primary" (click)="presentModal(data.imgUrl, data.title)">Consulter le Document</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
